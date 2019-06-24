@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design" 
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             mc:Ignorable="d" x:Class="HyperLinkExemplo.MainPage">
+    
+       <StackLayout Margin="20,35,20,20">
+        <Label Text="Exemplos de Hyperlink"
+               HorizontalOptions="Center"
+           FontAttributes="Bold" />
+        <!--   HyperLink Simples     -->
+        <Label Text="Quer ver artigos sobre Xamarin?." />
+        <Label Text="Bertuzzi Medium"
+               TextColor="Blue"
+               TextDecorations="Underline"
+               HorizontalOptions="Center">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding TapCommand}"
+                                      CommandParameter="https://medium.com/@bertuzzi/" />
+            </Label.GestureRecognizers>
+        </Label>
+        
+        <!--   HyperLink no meio do Texto     -->
+        <Label>
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Ou você pode, clicar " />
+                    <Span Text="aqui"
+                          TextColor="Blue"
+                          TextDecorations="Underline">
+                        <Span.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding TapCommand}"
+                                                  CommandParameter="https://github.com/TBertuzzi/XXamarin/" />
+                        </Span.GestureRecognizers>
+                    </Span>
+                    <Span Text=" para ver exemplos de Xamarin." />
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+        
+    </StackLayout>
+</ContentPage>
